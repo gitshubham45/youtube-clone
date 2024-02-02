@@ -18,7 +18,6 @@ export const AppContext = (props) => {
         setLoading(true);
         fetchDataFromApi(`search/?q=${query}`).then(({ contents }) => {
             console.log(contents);
-            console.log(process.env.REACT_APP_YOUTUBE_API_KEY);
             setSearchResults(contents);
             setLoading(false);
         });
