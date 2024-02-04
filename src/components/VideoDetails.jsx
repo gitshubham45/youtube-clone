@@ -28,7 +28,7 @@ const VideoDetails = () => {
       console.log(res);
       setVideo(res);
       setLoading(false);
-    }catch (e) {
+    } catch (e) {
       console.log(e);
     }
   };
@@ -40,7 +40,7 @@ const VideoDetails = () => {
       console.log(res);
       setRelatedVideos(res);
       setLoading(false);
-    }catch (e) {
+    } catch (e) {
       console.log(e);
     }
   };
@@ -48,7 +48,7 @@ const VideoDetails = () => {
   return (
     <div className="flex justify-center flex-row h-[calc(100%-56px)] bg-black">
       <div className="w-full max-w-[1280px] flex flex-col lg:flex-row">
-        <div className="flex flex-col lg:w-[calc(100%-350px)] xl:w-[calc(100%-400px)] px-4 py-3 lg:py-6 overflow-y-auto">
+        <div className="flex flex-col lg:w-[calc(100%-350px)] xl:w-[calc(100%-400px)] px-4 py-3 lg:py-6 overflow-y-auto ml-8">
           <div className="h-[200px] md:h-[400px] lg:h-[400px] xl:h-[550px] ml-[-16px] lg:ml-0 mr-[-16px] lg:mr-0">
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${id}`}
@@ -59,10 +59,10 @@ const VideoDetails = () => {
               playing={true}
             />
           </div>
-          <div className="text-white font-bold text-sm md:text-xl mt-4 line-clamp-2">
+          <div className="text-white font-bold text-sm md:text-xl mt-3 ">
             {video?.title}
           </div>
-          <div className="flex justify-between flex-col md:flex-row mt-4">
+          <div className="flex justify-between flex-col md:flex-row mt-3">
             <div className="flex">
               <div className="flex items-start">
                 <div className="flex h-11 w-11 rounded-full overflow-hidden">
