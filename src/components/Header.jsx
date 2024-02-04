@@ -41,9 +41,9 @@ const Header = () => {
             {loading && <Loader />}
 
             <div className="flex h-5 items-center">
-                {pageName !== "video" && (
+                {/* {pageName !== "video" && (
                     <div
-                        className="flex md:hidden md:mr-6 cursor-pointer items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]"
+                        className="flex md:mr-6 cursor-pointer items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]"
                         onClick={mobileMenuToggle}
                     >
                         {mobileMenu ? (
@@ -52,7 +52,17 @@ const Header = () => {
                             <SlMenu className='text-white text-xl' />
                         )}
                     </div>
-                )}
+                )} */}
+                <div
+                    className="flex md:mr-6 cursor-pointer items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]"
+                    onClick={mobileMenuToggle}
+                >
+                    {mobileMenu ? (
+                        <CgClose className='text-white text-xl' />
+                    ) : (
+                        <SlMenu className='text-white text-xl' />
+                    )}
+                </div>
                 <Link to="/" className='"flex h-5 items-center'>
                     <img
                         className='h-full hidden dark:md:block'
@@ -90,14 +100,14 @@ const Header = () => {
             <div className="flex items-center">
                 <div className="hidden md:flex">
                     <div className="flex items-center justify-center h-10 w-10 rounded-full hover:bg-[#3030300]/[0.6]">
-                        <RiVideoAddLine  className='text-white text-xl cursor-pointer'/>
+                        <RiVideoAddLine className='text-white text-xl cursor-pointer' />
                     </div>
                     <div className='flex items-center justify-center ml-2 h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]'>
-                        <FiBell className='text-white text-xl cursor-pointer'/>
+                        <FiBell className='text-white text-xl cursor-pointer' />
                     </div>
                 </div>
                 <div className='flex h-8 w-8 overflow-hidden rounded-full md:ml-4'>
-                    <img src="https://xsgames.co/randomusers/assets/avatars/female/67.jpg" alt='img'/>
+                    <img src="https://xsgames.co/randomusers/assets/avatars/female/67.jpg" alt='img' />
                 </div>
             </div>
         </div>

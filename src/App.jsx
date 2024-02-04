@@ -14,6 +14,7 @@ import VideoDetails from './components/VideoDetails';
 
 
 const App = () => {
+    // console.log(process.env.REACT_APP_YOUTUBE_API_KEY);
 
     return (
         <AppContext>
@@ -21,6 +22,7 @@ const App = () => {
                 <div className='flex  flex-col h-full'>
                     <Header />
                     <Routes>
+                        
                         <Route path="/" exact element={ <Feed />} />
                         <Route path="searchResult/:searchQuery" element={<SearchResult />} />
                         <Route path="/video/:id" element={ <VideoDetails />} />
