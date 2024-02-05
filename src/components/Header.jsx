@@ -33,7 +33,7 @@ const Header = () => {
 
     const { pathname } = useLocation();
 
-    const pageName = pathname?.split(`/`)?.filter(Boolean)?.[0];
+    const pageName = pathname?.split(`/`)?.filter(Boolean)?.[0]+"c";
 
 
     return (

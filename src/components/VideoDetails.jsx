@@ -8,12 +8,14 @@ import { abbreviateNumber } from "js-abbreviation-number";
 import { fetchDataFromApi } from "../utils/api";
 import { Context } from "../context/contextApi";
 import SuggestionVideoCard from "./SuggestionVideoCard";
+import LeftNav from './LeftNav';
+
 
 const VideoDetails = () => {
   const [video, setVideo] = useState();
   const [relatedVideos, setRelatedVideos] = useState();
   const { id } = useParams();
-  const { setLoading } = useContext(Context);
+  const { setLoading , singleVideo} = useContext(Context);
 
   useEffect(() => {
     document.getElementById("root").classList.add("custom-h");
@@ -23,12 +25,14 @@ const VideoDetails = () => {
 
   const fetchVideoDetails = async () => {
     setLoading(true);
+    setVideo(singleVideo);  
     try {
       const res = await fetchDataFromApi(`video/details/?id=${id}`);
       console.log(res);
       setVideo(res);
       setLoading(false);
     } catch (e) {
+      setLoading(false);
       console.log(e);
     }
   };
@@ -44,6 +48,10 @@ const VideoDetails = () => {
       console.log(e);
     }
   };
+
+  console.log(video);
+  
+  
 
   return (
     <div className="flex justify-center flex-row h-[calc(100%-56px)] bg-black">

@@ -11,7 +11,6 @@ const options = {
 };
 
 export const fetchDataFromApi = async (url) => {
-    console.log(process.env.REACT_APP_API_KEY);
     const { data } = await axios.get(`${BASE_URL}/${url}`, options);
     return data;
 };

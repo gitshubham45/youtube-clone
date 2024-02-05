@@ -1,14 +1,27 @@
 import { abbreviateNumber } from 'js-abbreviation-number';
-import React from 'react';
+import React , {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { BsFillCheckCircleFill } from "react-icons/bs";
+import { Context } from "../context/contextApi";
 
 import VideoLength from "../shared/VideoLength";
 
 
 const VideoCard = ({ video }) => {
+
+  const { singleVideo , setSingleVideo } = useContext(Context);
+
+
+  const clickHandler = () =>{
+    setSingleVideo(video);
+  }
+
+  console.log(singleVideo);
+
+
   return (
-    <Link to={`/video/${video?.videoId}`}>
+    <Link onClick={clickHandler} to={`/video/${video?.videoId}`}>
+
       <div className="flex flex-col mb-8">
         <div className="relative h-48  md:h-40 md:rounded-xl overflow-hidden">
           <img
